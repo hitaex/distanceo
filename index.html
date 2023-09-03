@@ -1,13 +1,38 @@
-<!DOCTYPEHTML>
+<!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="script" href="main.js">
-  <h1>Distance finder,</h1>
-    </head>
-  <body>
-<input id="myInput" type="text" />
+<head>
+    <title>Distance Calculator</title>
+</head>
+<body>
+    <h1>Distance Calculator</h1>
+    <form id="distanceForm">
+        <label for="point1">Point 1:</label>
+        <input type="text" id="point1" placeholder="Enter Point 1 coordinates (e.g., x1, y1)" required><br><br>
 
-  <p>2d distance formula  :slockers:</p>
-    </body>
+        <label for="point2">Point 2:</label>
+        <input type="text" id="point2" placeholder="Enter Point 2 coordinates (e.g., x2, y2)" required><br><br>
+
+        <input type="submit" value="Calculate Distance">
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("distanceForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const point1 = document.getElementById("point1").value;
+            const point2 = document.getElementById("point2").value;
+
+            // Parse the input to extract coordinates (assuming comma-separated values)
+            const [x1, y1] = point1.split(',').map(parseFloat);
+            const [x2, y2] = point2.split(',').map(parseFloat);
+
+            // Calculate the distance
+            const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+
+            // Display the result
+            document.getElementById("result").innerHTML = `The distance between (${x1}, ${y1}) and (${x2}, ${y2}) is ${distance.toFixed(2)}`;
+        });
+    </script>
+</body>
 </html>
