@@ -8,3 +8,5 @@ contact me in any case of bug, issue, or suggestion.
                     instagram    @culturedfool
 
                     hitaex@outlook.com
+# this is strictly a "2d" calculater, It uses the formula below. 
+https://cdn.hswstatic.com/gif/distance-formula.jpg
